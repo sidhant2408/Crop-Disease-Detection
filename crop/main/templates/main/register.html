@@ -1,0 +1,11 @@
+<h1>Register</h1>
+
+<form method="POST" action="">
+    {% csrf_token %}
+        {{form.as_p}}
+    <input type="submit" name="Create user" id="" value="Register">
+
+    <hr>
+
+    Already have an accout <a href="/login">Login</a> here
+</form>

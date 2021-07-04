@@ -1,0 +1,15 @@
+{% extends 'main/header.html' %}
+
+{% block data %}
+
+<h4>Search quary with camera</h4>
+<br><br><br>
+<form action="camera_search", method="POST", enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="image">
+    <input type="submit" value="Process">
+</form>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br>
+{% endblock %}

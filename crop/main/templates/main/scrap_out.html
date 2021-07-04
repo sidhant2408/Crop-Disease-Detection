@@ -1,0 +1,13 @@
+{% extends 'main/header.html' %}
+
+{% block data %}
+<div class="container">
+    {% for key,value in out.items %}
+        <p><h2><b><font face="Monotype Corsiva" size="12" color="blue">{{key}}</font></b></h2></p>
+        {% for i in value %}
+            <font size="4"><b>{{i}}</b></font>
+        {% endfor %}
+    {% endfor %}
+</div>
+<br><br>
+{% endblock %}

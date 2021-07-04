@@ -1,0 +1,27 @@
+{% extends 'main/header.html' %}
+
+{% block data %}
+<br>
+<h5 style="margin-left:2%"><font face="Britannic Bold" size="6" color="red">Search result for:   </font><i>{{query}}</i></h5>
+<div style="margin-left:5%">
+    {% for i in found_desease %}
+        <p><font face="Times New Roman"><a href="{% url 'desease' i.id %}">{{i.Disease_name}}</a></font></p>
+    {% endfor %}
+    {% for i in found_scrap %}
+        <p><font face="Times New Roman"><a href="{% url 'desease_scrap' i.1 %}">{{i.0}}</a></font></p>
+    {% endfor %}
+    {% if found_desease|length < 1 and found_scrap|length < 1 %}
+        <br>
+        <p><font face="Times New Roman">No search results!</font></p>
+        <p><font face="Times New Roman">Your search query: <i><b>{{query}}</b></i> - did not match any documents.</font></p>
+        <p><font face="Times New Roman">Suggestions: </font></p>
+        <ul>
+            <li><font face="Times New Roman">Make sure that all words are spelled correctly.</font></li>
+            <li><font face="Times New Roman">Try different keywords.</font></li>
+            <li><font face="Times New Roman">Try more general keywords.</font></li>
+        </ul>
+    {% endif %}
+    
+<br><br>
+    </div>
+{% endblock %}

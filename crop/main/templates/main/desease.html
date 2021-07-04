@@ -1,0 +1,12 @@
+{% extends 'main/header.html' %}
+
+{% block data %}
+<div class="container">
+<p><h2><b><font face="Monotype Corsiva" size="12" color="blue">Name</font></b></h2><font size="4"><b>{{ desease.Disease_name | safe}}</b></font></p>
+<p><h2><b><font face="Monotype Corsiva" size="12" color="blue">Description</font></b></h2><font size="5"><b>{{ desease.Disease_description |safe }}</b></font></p>
+    <img src="{{ desease.Disease_unhealthy_picture.url }}" width="350" height="350">
+    <img src="{{ desease.Disease_healthy_picture.url }}" width="350" height="350">
+<p><h2><b><font face="Monotype Corsiva" size="12" color="blue">Symptoms</font></b></h2><font size="5"><b>{{desease.Disease_symptoms|safe}}</b></font></p>
+<p><h2><b><font face="Monotype Corsiva" size="12" color="blue">Remedies</font></b></h2><font size="5"><b>{{ desease.Disease_remidies | safe}}</b></font></p>
+</div>
+{% endblock %}

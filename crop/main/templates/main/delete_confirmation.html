@@ -1,0 +1,13 @@
+{% extends 'main/header.html' %}
+{% block data %}
+<h2>Delete Database</h2>
+
+<form method ="POST" action="{% url 'delete_database' pk %}">
+    {% csrf_token %}
+    Are you sure you want to delete <b>{{disease}}</b>
+    <br><br><br>
+    <input type="submit" value="Delete data">
+    <br><br><br><br>
+    <br><br><br><br>
+</form>  
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'main/header_user.html' %}
+
+{% block data %}
+<div class="row">
+        {% for i in desease %}
+        <div class="col s12 m6 l3">
+            <div class="card small" style="height:500px; overflow: hidden;">
+                <div class="card-image" style="height: 60%; overflow: hidden; ">
+                    {% if i.Disease_healthy_picture %}
+                        <img src="{{ i.Disease_unhealthy_picture.url }}" width="50" height="550">
+                    {% endif %}
+                </div>
+                <div class="card-content" style = "height: 30%; overflow: hidden;">
+                    <span class="card-title"><font face="Times New Roman"><b>{{i.Disease_name}}</b></font></span>
+                    <p  style="font-size: 70%;"><font face="Times New Roman">{{i.Disease_description|safe}}</font></p>
+                </div>
+                <div class="card-action" style = "height: 10%;">
+                    <a href="{% url 'desease' i.id %}">View More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+</div>
+{% endblock %}
